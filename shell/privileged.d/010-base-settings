@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+date > /etc/vagrant-`hostname`-box-created
+
+# set to UTF8 locale
+localectl set-locale LANG=en_US.utf8 LC_CTYPE=en_US.utf8
+
+# set timezone to Luxembourg timezone
+timedatectl set-timezone "Europe/Luxembourg"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo Enabled yum cache
+sed -i.vagrant -e "s/^keepcache=.*/keepcache=1/" /etc/yum.conf

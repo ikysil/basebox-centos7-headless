@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+create_sudoers() {
+    local sudoers_file="/etc/sudoers.d/$1"
+    cat > "$sudoers_file"
+    chown root:root "$sudoers_file"
+    chmod 0440 "$sudoers_file"
+}
+
+create_sudoers 10-basebox-headless <<- sudoers
+Defaults        env_keep = "http_proxy https_proxy ftp_proxy no_proxy"
+
+sudoers
